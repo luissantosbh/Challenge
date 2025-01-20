@@ -6,3 +6,39 @@
 //
 
 import Foundation
+
+class CatAPIService {
+    static let shared = CatAPIService()
+    private let baseURL = "https://cataas.com/api/cats?limit=10"
+    
+    private init() {}
+    
+    func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
+        guard let url = URL(string: baseURL) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let cats = try decoder.decode([Cat].self, from: data)
+                completion(.success(cats))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        task.resume()
+    }
+}

@@ -9,24 +9,29 @@ import SwiftUI
 
 struct CatDetailView: View {
     let cat: Cat
-
+    
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .center, spacing: 20) {
                 AsyncImage(url: URL(string: "https://cataas.com/cat/\(cat.id)")) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity, maxHeight: 300)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 1))
                 } placeholder: {
                     ProgressView()
                 }
-
-                Text("ID: \(cat.id)").font(.title2).bold()
-                Text("Tags: \(cat.tags.joined(separator: ", "))").font(.body)
-                Text("Owner: \(cat.owner ?? "Unknown")").font(.body)
-                Text("Created At: \(cat.createdAt)").font(.body)
-                Text("Updated At: \(cat.updatedAt)").font(.body)
+                
+                VStack(spacing: 10) {
+                    Text("ID: \(cat.id)").font(.title2).bold()
+                    Text("Tags: \(cat.tags.joined(separator: ", "))").font(.body)
+                    Text("Owner: \(cat.owner ?? "Unknown")").font(.body)
+                    Text("Created At: \(cat.createdAt ?? "N/A")").font(.body)
+                    Text("Created At: \(cat.updatedAt ?? "N/A")").font(.body)
+                }
+                .multilineTextAlignment(.center)
             }
             .padding()
         }

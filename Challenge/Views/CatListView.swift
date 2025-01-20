@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CatListView: View {
     let cats: [Cat]
-
+    
     var body: some View {
         List(cats) { cat in
             NavigationLink(destination: CatDetailView(cat: cat)) {
@@ -17,8 +17,10 @@ struct CatListView: View {
                     AsyncImage(url: URL(string: "https://cataas.com/cat/\(cat.id)")) { image in
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                     } placeholder: {
                         ProgressView()
                     }

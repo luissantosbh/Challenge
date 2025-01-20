@@ -9,9 +9,9 @@ struct Cat: Identifiable, Codable {
     let id: String
     let tags: [String]
     let owner: String?
-    let createdAt: String
-    let updatedAt: String
-
+    let createdAt: String?
+    let updatedAt: String?
+    
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case tags
