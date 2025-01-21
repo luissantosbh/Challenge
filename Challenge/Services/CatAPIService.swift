@@ -8,7 +8,11 @@
 import Foundation
 
 class CatAPIRepository: CatRepository {
-    private let baseURL = "https://cataas.com/api/cats?limit=10"
+    private let baseURL: String
+    
+    init(baseURL: String = "https://cataas.com/api/cats?limit=10") {
+        self.baseURL = baseURL
+    }
     
     func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
         guard let url = URL(string: baseURL) else {
