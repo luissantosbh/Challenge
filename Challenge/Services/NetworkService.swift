@@ -1,25 +1,14 @@
 //
-//  CatAPIService.swift
+//  NetworkService.swift
 //  Challenge
 //
-//  Created by Luís Santos on 20/01/25.
+//  Created by Luís Santos on 21/01/25.
 //
 
 import Foundation
 
-class CatAPIRepository: CatRepository {
-    private let baseURL: String
-    
-    init(baseURL: String = "https://cataas.com/api/cats?limit=10") {
-        self.baseURL = baseURL
-    }
-    
-    func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
-        guard let url = URL(string: baseURL) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
-            return
-        }
-        
+class NetworkService: NetworkServiceProtocol {
+    func request<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -34,8 +23,8 @@ class CatAPIRepository: CatRepository {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let cats = try decoder.decode([Cat].self, from: data)
-                completion(.success(cats))
+                let decodedResponse = try decoder.decode(T.self, from: data)
+                completion(.success(decodedResponse))
             } catch {
                 completion(.failure(error))
             }

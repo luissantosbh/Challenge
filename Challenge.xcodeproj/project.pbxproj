@@ -14,10 +14,12 @@
 		161368312D3E7624006290B8 /* CatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368302D3E7624006290B8 /* CatDetailView.swift */; };
 		161368332D3E76AF006290B8 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368322D3E76AF006290B8 /* Cat.swift */; };
 		161368372D3E79E3006290B8 /* CatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368362D3E79E3006290B8 /* CatListView.swift */; };
-		1613683E2D3E82F2006290B8 /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613683D2D3E82F2006290B8 /* CatAPIService.swift */; };
+		1613683E2D3E82F2006290B8 /* CatAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613683D2D3E82F2006290B8 /* CatAPIRepository.swift */; };
 		161368402D3FC5EC006290B8 /* CatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613683F2D3FC5EC006290B8 /* CatRepository.swift */; };
 		161368422D3FC653006290B8 /* CatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368412D3FC653006290B8 /* CatListViewModel.swift */; };
 		1613684C2D3FCC50006290B8 /* ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613684B2D3FCC50006290B8 /* ChallengeTests.swift */; };
+		161368532D401A9F006290B8 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */; };
+		161368552D401ACA006290B8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368542D401ACA006290B8 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +41,13 @@
 		161368302D3E7624006290B8 /* CatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailView.swift; sourceTree = "<group>"; };
 		161368322D3E76AF006290B8 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		161368362D3E79E3006290B8 /* CatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListView.swift; sourceTree = "<group>"; };
-		1613683D2D3E82F2006290B8 /* CatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
+		1613683D2D3E82F2006290B8 /* CatAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIRepository.swift; sourceTree = "<group>"; };
 		1613683F2D3FC5EC006290B8 /* CatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRepository.swift; sourceTree = "<group>"; };
 		161368412D3FC653006290B8 /* CatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewModel.swift; sourceTree = "<group>"; };
 		161368492D3FCC50006290B8 /* ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1613684B2D3FCC50006290B8 /* ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTests.swift; sourceTree = "<group>"; };
+		161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		161368542D401ACA006290B8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +138,8 @@
 		1613683C2D3E81DF006290B8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1613683D2D3E82F2006290B8 /* CatAPIService.swift */,
+				1613683D2D3E82F2006290B8 /* CatAPIRepository.swift */,
+				161368542D401ACA006290B8 /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1613683F2D3FC5EC006290B8 /* CatRepository.swift */,
+				161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -263,11 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161368552D401ACA006290B8 /* NetworkService.swift in Sources */,
 				161368332D3E76AF006290B8 /* Cat.swift in Sources */,
 				161368422D3FC653006290B8 /* CatListViewModel.swift in Sources */,
 				161368372D3E79E3006290B8 /* CatListView.swift in Sources */,
 				161368252D3E758E006290B8 /* ContentView.swift in Sources */,
-				1613683E2D3E82F2006290B8 /* CatAPIService.swift in Sources */,
+				1613683E2D3E82F2006290B8 /* CatAPIRepository.swift in Sources */,
+				161368532D401A9F006290B8 /* NetworkServiceProtocol.swift in Sources */,
 				161368402D3FC5EC006290B8 /* CatRepository.swift in Sources */,
 				161368312D3E7624006290B8 /* CatDetailView.swift in Sources */,
 				161368232D3E758E006290B8 /* ChallengeApp.swift in Sources */,
