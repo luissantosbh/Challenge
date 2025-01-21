@@ -8,37 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var cats: [Cat] = []
-    @State private var isLoading = true
-    @State private var errorMessage: String?
+    @StateObject private var viewModel: CatListViewModel
+    
+    init(repository: CatRepository) {
+        _viewModel = StateObject(wrappedValue: CatListViewModel(repository: repository))
+    }
     
     var body: some View {
         NavigationView {
-            if isLoading {
+            if viewModel.isLoading {
                 ProgressView("Loading...")
-            } else if let errorMessage = errorMessage {
+            } else if let errorMessage = viewModel.errorMessage {
                 Text("Erro: \(errorMessage)")
                     .foregroundColor(.red)
             } else {
-                CatListView(cats: cats)
+                CatListView(cats: viewModel.cats)
             }
         }
         .onAppear {
-            fetchCats()
-        }
-    }
-    
-    private func fetchCats() {
-        CatAPIService.shared.fetchCats { result in
-            DispatchQueue.main.async {
-                isLoading = false
-                switch result {
-                case .success(let fetchedCats):
-                    cats = fetchedCats
-                case .failure(let error):
-                    errorMessage = error.localizedDescription
-                }
-            }
+            viewModel.fetchCats()
         }
     }
 }

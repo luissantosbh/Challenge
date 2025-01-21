@@ -7,11 +7,8 @@
 
 import Foundation
 
-class CatAPIService {
-    static let shared = CatAPIService()
+class CatAPIRepository: CatRepository {
     private let baseURL = "https://cataas.com/api/cats?limit=10"
-    
-    private init() {}
     
     func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
         guard let url = URL(string: baseURL) else {

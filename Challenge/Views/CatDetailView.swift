@@ -29,7 +29,7 @@ struct CatDetailView: View {
                     Text("Tags: \(cat.tags.joined(separator: ", "))").font(.body)
                     Text("Owner: \(cat.owner ?? "Unknown")").font(.body)
                     Text("Created At: \(cat.createdAt ?? "N/A")").font(.body)
-                    Text("Created At: \(cat.updatedAt ?? "N/A")").font(.body)
+                    Text("Updated At: \(cat.updatedAt ?? "N/A")").font(.body)
                 }
                 .multilineTextAlignment(.center)
             }
@@ -39,3 +39,4 @@ struct CatDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
+
