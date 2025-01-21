@@ -13,6 +13,7 @@ class CatListViewModel: ObservableObject {
     @Published var errorMessage: String?
     
     private let repository: CatRepository
+    private let baseImageUrl: String = "https://cataas.com/cat/"
     
     init(repository: CatRepository) {
         self.repository = repository
@@ -33,5 +34,9 @@ class CatListViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func imageUrl(for catId: String) -> URL? {
+        return URL(string: "\(baseImageUrl)\(catId)")
     }
 }

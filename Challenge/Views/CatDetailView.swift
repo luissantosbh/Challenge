@@ -9,19 +9,22 @@ import SwiftUI
 
 struct CatDetailView: View {
     let cat: Cat
+    let imageUrlProvider: (String) -> URL?
     
     var body: some View {
         ScrollView {
             VStack(alignment: .center, spacing: 20) {
-                AsyncImage(url: URL(string: "https://cataas.com/cat/\(cat.id)")) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: .infinity, maxHeight: 300)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 1))
-                } placeholder: {
-                    ProgressView()
+                if let url = imageUrlProvider(cat.id) {
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity, maxHeight: 300)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 1))
+                    } placeholder: {
+                        ProgressView()
+                    }
                 }
                 
                 VStack(spacing: 10) {
@@ -39,4 +42,3 @@ struct CatDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-

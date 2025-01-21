@@ -9,20 +9,23 @@ import SwiftUI
 
 struct CatListView: View {
     let cats: [Cat]
+    let imageUrlProvider: (String) -> URL?
     
     var body: some View {
         List(cats) { cat in
-            NavigationLink(destination: CatDetailView(cat: cat)) {
+            NavigationLink(destination: CatDetailView(cat: cat, imageUrlProvider: imageUrlProvider)) {
                 HStack {
-                    AsyncImage(url: URL(string: "https://cataas.com/cat/\(cat.id)")) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                    } placeholder: {
-                        ProgressView()
+                    if let url = imageUrlProvider(cat.id) {
+                        AsyncImage(url: url) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                        } placeholder: {
+                            ProgressView()
+                        }
                     }
                     
                     VStack(alignment: .leading) {

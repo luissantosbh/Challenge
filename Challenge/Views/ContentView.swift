@@ -22,7 +22,7 @@ struct ContentView: View {
                 Text("Erro: \(errorMessage)")
                     .foregroundColor(.red)
             } else {
-                CatListView(cats: viewModel.cats)
+                CatListView(cats: viewModel.cats, imageUrlProvider: viewModel.imageUrl(for:))
             }
         }
         .onAppear {
