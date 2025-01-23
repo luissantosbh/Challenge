@@ -20,6 +20,11 @@
 		1613684C2D3FCC50006290B8 /* ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613684B2D3FCC50006290B8 /* ChallengeTests.swift */; };
 		161368532D401A9F006290B8 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */; };
 		161368552D401ACA006290B8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368542D401ACA006290B8 /* NetworkService.swift */; };
+		1613685C2D41789B006290B8 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613685B2D41789B006290B8 /* MockRequest.swift */; };
+		1613685F2D4179D0006290B8 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1613685E2D4179D0006290B8 /* MockData.json */; };
+		161368622D427668006290B8 /* CatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368612D427668006290B8 /* CatCard.swift */; };
+		161368642D427678006290B8 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368632D427678006290B8 /* CatImage.swift */; };
+		161368682D4279DB006290B8 /* CatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368672D4279DB006290B8 /* CatDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		1613684B2D3FCC50006290B8 /* ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTests.swift; sourceTree = "<group>"; };
 		161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		161368542D401ACA006290B8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1613685B2D41789B006290B8 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
+		1613685E2D4179D0006290B8 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
+		161368612D427668006290B8 /* CatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCard.swift; sourceTree = "<group>"; };
+		161368632D427678006290B8 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
+		161368672D4279DB006290B8 /* CatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,8 @@
 				161368392D3E7CAA006290B8 /* Models */,
 				1613683C2D3E81DF006290B8 /* Services */,
 				161368432D3FC856006290B8 /* Protocols */,
+				1613685D2D41797D006290B8 /* Resources */,
+				1613685A2D41787D006290B8 /* Mocks */,
 				161368262D3E758F006290B8 /* Assets.xcassets */,
 				161368282D3E758F006290B8 /* Preview Content */,
 			);
@@ -115,6 +127,7 @@
 				161368242D3E758E006290B8 /* ContentView.swift */,
 				161368362D3E79E3006290B8 /* CatListView.swift */,
 				161368302D3E7624006290B8 /* CatDetailView.swift */,
+				161368602D427649006290B8 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +180,48 @@
 				1613684B2D3FCC50006290B8 /* ChallengeTests.swift */,
 			);
 			path = ChallengeTests;
+			sourceTree = "<group>";
+		};
+		1613685A2D41787D006290B8 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1613685B2D41789B006290B8 /* MockRequest.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		1613685D2D41797D006290B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1613685E2D4179D0006290B8 /* MockData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		161368602D427649006290B8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				161368652D427994006290B8 /* Cards */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		161368652D427994006290B8 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				161368612D427668006290B8 /* CatCard.swift */,
+				161368662D4279BD006290B8 /* CatCardComponets */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		161368662D4279BD006290B8 /* CatCardComponets */ = {
+			isa = PBXGroup;
+			children = (
+				161368632D427678006290B8 /* CatImage.swift */,
+				161368672D4279DB006290B8 /* CatDetails.swift */,
+			);
+			path = CatCardComponets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +307,7 @@
 			files = (
 				1613682A2D3E758F006290B8 /* Preview Assets.xcassets in Resources */,
 				161368272D3E758F006290B8 /* Assets.xcassets in Resources */,
+				1613685F2D4179D0006290B8 /* MockData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,15 +325,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1613685C2D41789B006290B8 /* MockRequest.swift in Sources */,
 				161368552D401ACA006290B8 /* NetworkService.swift in Sources */,
 				161368332D3E76AF006290B8 /* Cat.swift in Sources */,
 				161368422D3FC653006290B8 /* CatListViewModel.swift in Sources */,
 				161368372D3E79E3006290B8 /* CatListView.swift in Sources */,
 				161368252D3E758E006290B8 /* ContentView.swift in Sources */,
 				1613683E2D3E82F2006290B8 /* CatAPIRepository.swift in Sources */,
+				161368642D427678006290B8 /* CatImage.swift in Sources */,
 				161368532D401A9F006290B8 /* NetworkServiceProtocol.swift in Sources */,
 				161368402D3FC5EC006290B8 /* CatRepository.swift in Sources */,
 				161368312D3E7624006290B8 /* CatDetailView.swift in Sources */,
+				161368682D4279DB006290B8 /* CatDetails.swift in Sources */,
+				161368622D427668006290B8 /* CatCard.swift in Sources */,
 				161368232D3E758E006290B8 /* ChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
