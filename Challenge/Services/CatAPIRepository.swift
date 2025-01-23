@@ -10,10 +10,12 @@ import Foundation
 class CatAPIRepository: CatRepository {
     private let networkService: NetworkServiceProtocol
     private let baseURL: String
+    private let useMockOnError: Bool
     
-    init(networkService: NetworkServiceProtocol, baseURL: String = "https://cataas.com/api/cats?limit=30") {
+    init(networkService: NetworkServiceProtocol, baseURL: String = "https://cataas.com/api/cats?limit=30", useMockOnError: Bool = true) {
         self.networkService = networkService
         self.baseURL = baseURL
+        self.useMockOnError = useMockOnError
     }
     
     func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
@@ -28,13 +30,15 @@ class CatAPIRepository: CatRepository {
         let timeoutWorkItem = DispatchWorkItem {
             if !isAPICallCompleted {
                 print("Request timed out, switching to mock data.")
-                MockRequest.fetchMockData(completion: completion)
+                if self.useMockOnError {
+                    MockRequest.fetchMockData(completion: completion)
+                } else {
+                    completion(.failure(NSError(domain: "RequestTimeout", code: -1, userInfo: nil)))
+                }
             }
         }
         
         DispatchQueue.global().asyncAfter(deadline: .now() + 10, execute: timeoutWorkItem)
-        
-        // MARK: - Perform the real API request
         
         dispatchGroup.enter()
         networkService.request(url: url) { [weak self] (result: Result<[Cat], Error>) in
@@ -48,11 +52,14 @@ class CatAPIRepository: CatRepository {
             case .success(let cats):
                 completion(.success(cats))
             case .failure(let error):
-                print("API request failed with error: \(error). Switching to mock data.")
+                print("API request failed with error: \(error).")
                 
-        // MARK: - Perform the mock API request
-                
-                MockRequest.fetchMockData(completion: completion)
+                if self.useMockOnError {
+                    print("Switching to mock data.")
+                    MockRequest.fetchMockData(completion: completion)
+                } else {
+                    completion(.failure(error))
+                }
             }
         }
     }

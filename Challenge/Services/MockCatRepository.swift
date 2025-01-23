@@ -8,12 +8,16 @@
 import Foundation
 
 class MockCatRepository: CatRepository {
+    var shouldReturnError = false
+    var mockData: [Cat] = []
+    
     func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
-        MockRequest.fetchMockData { result in
-            DispatchQueue.main.async {
-                completion(result)
-            }
+        if shouldReturnError {
+            completion(.failure(NSError(domain: "MockError", code: -1, userInfo: nil)))
+        } else {
+            completion(.success(mockData))
         }
     }
 }
+
 

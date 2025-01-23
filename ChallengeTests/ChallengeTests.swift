@@ -31,31 +31,26 @@ class MockNetworkService: NetworkServiceProtocol {
 
 class CatListViewModelTests: XCTestCase {
     var viewModel: CatListViewModel!
-    var mockRepository: CatAPIRepository!
-    var mockNetworkService: MockNetworkService!
+    var mockRepository: MockCatRepository!
     
     override func setUp() {
         super.setUp()
-        mockNetworkService = MockNetworkService()
-        mockRepository = CatAPIRepository(networkService: mockNetworkService)
+        mockRepository = MockCatRepository()
         viewModel = CatListViewModel(repository: mockRepository)
     }
     
     override func tearDown() {
         viewModel = nil
         mockRepository = nil
-        mockNetworkService = nil
         super.tearDown()
     }
     
     func testFetchCatsSuccess() {
-        mockNetworkService.shouldReturnError = false
-        mockNetworkService.mockData = """
-        [
-            {"_id": "1", "tags": ["cute", "fluffy"], "owner": "Owner1", "createdAt": "2023-01-01", "updatedAt": "2023-01-02"},
-            {"_id": "2", "tags": ["playful"], "owner": null, "createdAt": "2023-01-03", "updatedAt": "2023-01-04"}
+        mockRepository.shouldReturnError = false
+        mockRepository.mockData = [
+            Cat(id: "1", tags: ["cute", "fluffy"], owner: "Owner1", createdAt: "2023-01-01", updatedAt: "2023-01-02"),
+            Cat(id: "2", tags: ["playful"], owner: nil, createdAt: "2023-01-03", updatedAt: "2023-01-04")
         ]
-        """.data(using: .utf8)
         
         let expectation = XCTestExpectation(description: "Fetch cats successfully")
         viewModel.fetchCats()
@@ -72,7 +67,7 @@ class CatListViewModelTests: XCTestCase {
     }
     
     func testFetchCatsFailure() {
-        mockNetworkService.shouldReturnError = true
+        mockRepository.shouldReturnError = true
         
         let expectation = XCTestExpectation(description: "Fetch cats failed")
         viewModel.fetchCats()
@@ -88,6 +83,7 @@ class CatListViewModelTests: XCTestCase {
     }
 }
 
+
 class CatAPIRepositoryTests: XCTestCase {
     var mockNetworkService: MockNetworkService!
     var repository: CatAPIRepository!
@@ -95,7 +91,7 @@ class CatAPIRepositoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockNetworkService = MockNetworkService()
-        repository = CatAPIRepository(networkService: mockNetworkService)
+        repository = CatAPIRepository(networkService: mockNetworkService, useMockOnError: false)
     }
     
     override func tearDown() {
@@ -143,4 +139,3 @@ class CatAPIRepositoryTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
 }
-

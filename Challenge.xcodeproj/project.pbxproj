@@ -27,6 +27,7 @@
 		161368682D4279DB006290B8 /* CatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368672D4279DB006290B8 /* CatDetails.swift */; };
 		1613686B2D4299F5006290B8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1613686A2D4299F5006290B8 /* Kingfisher */; };
 		1613686D2D42B05C006290B8 /* MockCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613686C2D42B05C006290B8 /* MockCatRepository.swift */; };
+		1613686F2D42C09C006290B8 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613686E2D42C09C006290B8 /* MockNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		161368632D427678006290B8 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
 		161368672D4279DB006290B8 /* CatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetails.swift; sourceTree = "<group>"; };
 		1613686C2D42B05C006290B8 /* MockCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatRepository.swift; sourceTree = "<group>"; };
+		1613686E2D42C09C006290B8 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				1613683D2D3E82F2006290B8 /* CatAPIRepository.swift */,
 				1613686C2D42B05C006290B8 /* MockCatRepository.swift */,
 				161368542D401ACA006290B8 /* NetworkService.swift */,
+				1613686E2D42C09C006290B8 /* MockNetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				161368252D3E758E006290B8 /* ContentView.swift in Sources */,
 				1613683E2D3E82F2006290B8 /* CatAPIRepository.swift in Sources */,
 				161368642D427678006290B8 /* CatImage.swift in Sources */,
+				1613686F2D42C09C006290B8 /* MockNetworkService.swift in Sources */,
 				161368532D401A9F006290B8 /* NetworkServiceProtocol.swift in Sources */,
 				161368402D3FC5EC006290B8 /* CatRepository.swift in Sources */,
 				161368312D3E7624006290B8 /* CatDetailView.swift in Sources */,
