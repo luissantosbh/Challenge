@@ -12,20 +12,43 @@ struct CatDetails: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 50) {
-            VStack(alignment: .center, spacing: 5) {
-                Text("Owner: \(cat.owner ?? "Unknown")")
+            VStack(spacing: 10) {
+                Text("Owner: \(cat.owner ?? "This cat could be yours")")
                     .font(.subheadline)
                     .fontWeight(.bold)
-                Text("Tags: \(cat.tags.isEmpty ? "Unknown" : cat.tags.joined(separator: ", "))")
-                    .font(.subheadline)
+                
+                HStack {
+                    Text("Tags: \(cat.tags.isEmpty ? "Unknown" : cat.tags.joined(separator: ", "))")
+                        .font(.subheadline)
+                        .padding(10)
+                        .background(Color.blue.opacity(0.2))
+                        .cornerRadius(8)
+                }
             }
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(spacing: 10) {
                 Text("ID: \(cat.id)")
-                Text("Created At: \(cat.createdAt ?? "N/A")")
+                Text("Created At: \(formatDate(cat.createdAt) ?? "N/A")")
                     .font(.subheadline)
-                Text("Updated At: \(cat.updatedAt ?? "N/A")")
+                Text("Updated At: \(formatDate(cat.updatedAt) ?? "N/A")")
                     .font(.subheadline)
             }
         }
+        .padding()
+    }
+    
+    // MARK: - Private methods
+    
+    private func formatDate(_ dateString: String?) -> String? {
+        guard let dateString = dateString else { return nil }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE MMM dd yyyy HH:mm:ss 'GMT'Z (zzzz)"
+        formatter.locale = Locale(identifier: "en_US")
+        
+        if let date = formatter.date(from: dateString) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "MM/dd/yyyy"
+            return outputFormatter.string(from: date)
+        }
+        return nil
     }
 }

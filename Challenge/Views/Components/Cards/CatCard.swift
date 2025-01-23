@@ -12,7 +12,7 @@ struct CatCard: View {
     let imageUrlProvider: (String) -> URL?
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .center, spacing: 16) {
             CatImage(url: imageUrlProvider(cat.id))
             CatDetails(cat: cat)
         }

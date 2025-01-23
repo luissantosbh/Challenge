@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CatListView: View {
     let cats: [Cat]
@@ -16,18 +17,20 @@ struct CatListView: View {
             NavigationLink(destination: CatDetailView(cat: cat, imageUrlProvider: imageUrlProvider)) {
                 HStack {
                     if let url = imageUrlProvider(cat.id) {
-                        AsyncImage(url: url) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 50, height: 50)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                        } placeholder: {
-                            ProgressView()
-                        }
+                        KFImage(url)
+                            .placeholder {
+                                LoadingAnimation()
+                                    .padding()
+                            }
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                    } else {
+                        LoadingAnimation()
+                            .padding()
                     }
-                    
                     VStack(alignment: .leading) {
                         Text(cat.id).font(.headline)
                         Text(cat.tags.joined(separator: ", ")).font(.subheadline).foregroundColor(.gray)
@@ -36,5 +39,20 @@ struct CatListView: View {
             }
         }
         .navigationTitle("Cat List")
+    }
+}
+
+struct LoadingAnimation: View {
+    @State private var isAnimating = false
+    
+    var body: some View {
+        Circle()
+            .stroke(Color.gray, lineWidth: 2)
+            .scaleEffect(isAnimating ? 1.2 : 1)
+            .opacity(isAnimating ? 0.5 : 1)
+            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: isAnimating)
+            .onAppear {
+                isAnimating.toggle()
+            }
     }
 }
