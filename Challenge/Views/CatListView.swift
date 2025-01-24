@@ -9,6 +9,9 @@ import SwiftUI
 import Kingfisher
 
 struct CatListView: View {
+    
+    // MARK: - Properties
+    
     let cats: [Cat]
     let imageUrlProvider: (String) -> URL?
     
@@ -41,6 +44,8 @@ struct CatListView: View {
         .navigationTitle("Cat List")
     }
 }
+
+// MARK: - Loading Animation
 
 struct LoadingAnimation: View {
     @State private var isAnimating = false

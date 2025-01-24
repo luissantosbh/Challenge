@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct CatCard: View {
+    
+    // MARK: - Properties
+    
     let cat: Cat
     let imageUrlProvider: (String) -> URL?
+    
+    // MARK: - View Body
     
     var body: some View {
         VStack(alignment: .center, spacing: 16) {

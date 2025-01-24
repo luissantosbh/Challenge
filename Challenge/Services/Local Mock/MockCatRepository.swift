@@ -8,12 +8,19 @@
 import Foundation
 
 class MockCatRepository: CatRepository {
+    
+    // MARK: - Properties
+    
     var shouldReturnError = false
     var mockData: [Cat] = []
+    
+    // MARK: - Initializer
     
     init() {
         loadMockData()
     }
+    
+    // MARK: - Private Methods
     
     private func loadMockData() {
         if let url = Bundle.main.url(forResource: "MockData", withExtension: "json"),
@@ -27,6 +34,8 @@ class MockCatRepository: CatRepository {
             print("MockData.json not found.")
         }
     }
+    
+    // MARK: - Internal Methods
     
     func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
         if shouldReturnError {

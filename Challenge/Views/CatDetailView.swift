@@ -9,8 +9,14 @@
 import SwiftUI
 
 struct CatDetailView: View {
+    
+    // MARK: - Properties
+    
     let cat: Cat
     let imageUrlProvider: (String) -> URL?
+    
+    
+    // MARK: - View Body
     
     var body: some View {
         ScrollView {

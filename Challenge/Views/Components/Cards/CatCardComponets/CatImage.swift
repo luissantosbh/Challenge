@@ -9,7 +9,12 @@ import SwiftUI
 import Kingfisher
 
 struct CatImage: View {
+    
+    // MARK: - Properties
+    
     let url: URL?
+    
+    // MARK: - View Body
     
     var body: some View {
         if let url = url {

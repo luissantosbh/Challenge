@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // MARK: - Properties
+    
     @StateObject private var viewModel: CatListViewModel
+    
+    // MARK: - Initializer
     
     init(repository: CatRepository) {
         _viewModel = StateObject(wrappedValue: CatListViewModel(repository: repository))
     }
+    
+    // MARK: - View Body
     
     var body: some View {
         NavigationView {

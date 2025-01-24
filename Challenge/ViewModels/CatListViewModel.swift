@@ -8,6 +8,9 @@
 import Foundation
 
 class CatListViewModel: ObservableObject {
+    
+    // MARK: - Properties
+    
     @Published var cats: [Cat] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
@@ -15,9 +18,13 @@ class CatListViewModel: ObservableObject {
     private let repository: CatRepository
     private let baseImageUrl: String = "https://cataas.com/cat/"
     
+    // MARK: - Initializer
+    
     init(repository: CatRepository) {
         self.repository = repository
     }
+    
+    // MARK: - Internal Methods
     
     func fetchCats() {
         isLoading = true

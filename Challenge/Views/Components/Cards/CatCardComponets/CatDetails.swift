@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct CatDetails: View {
+    
+    // MARK: - Properties
+
     let cat: Cat
+    
+    // MARK: - View Body
     
     var body: some View {
         VStack(alignment: .center, spacing: 50) {
@@ -47,6 +52,8 @@ struct CatDetails: View {
         return nil
     }
 }
+
+// MARK: - Extensions
 
 extension DateFormatter {
     static let cachedFormatter: DateFormatter = {

@@ -8,8 +8,13 @@
 import Foundation
 
 class MockNetworkService: NetworkServiceProtocol {
+    
+    // MARK: - Properties
+    
     var shouldReturnError = false
     var mockData: Data?
+    
+    // MARK: - Internal Methods
     
     func request<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>) -> Void) {
         if shouldReturnError {

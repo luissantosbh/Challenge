@@ -8,14 +8,21 @@
 import Foundation
 
 class CatAPIRepository: CatRepository {
+    
+    // MARK: - Properties
+    
     private let networkService: NetworkServiceProtocol
     private let baseURL: String
-
+    
+    // MARK: - Initializer
+    
     init(networkService: NetworkServiceProtocol, baseURL: String = "https://cataas.com/api/cats?limit=30") {
         self.networkService = networkService
         self.baseURL = baseURL
     }
-
+    
+    // MARK: - Internal Methods
+    
     func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
         guard let url = URL(string: baseURL) else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
@@ -32,4 +39,3 @@ class CatAPIRepository: CatRepository {
         }
     }
 }
-
