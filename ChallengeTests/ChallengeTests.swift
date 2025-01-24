@@ -91,7 +91,7 @@ class CatAPIRepositoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockNetworkService = MockNetworkService()
-        repository = CatAPIRepository(networkService: mockNetworkService, useMockOnError: false)
+        repository = CatAPIRepository(networkService: mockNetworkService)
     }
     
     override func tearDown() {

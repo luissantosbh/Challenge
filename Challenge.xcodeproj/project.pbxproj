@@ -20,7 +20,6 @@
 		1613684C2D3FCC50006290B8 /* ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613684B2D3FCC50006290B8 /* ChallengeTests.swift */; };
 		161368532D401A9F006290B8 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */; };
 		161368552D401ACA006290B8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368542D401ACA006290B8 /* NetworkService.swift */; };
-		1613685C2D41789B006290B8 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613685B2D41789B006290B8 /* MockRequest.swift */; };
 		1613685F2D4179D0006290B8 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1613685E2D4179D0006290B8 /* MockData.json */; };
 		161368622D427668006290B8 /* CatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368612D427668006290B8 /* CatCard.swift */; };
 		161368642D427678006290B8 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368632D427678006290B8 /* CatImage.swift */; };
@@ -28,6 +27,7 @@
 		1613686B2D4299F5006290B8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1613686A2D4299F5006290B8 /* Kingfisher */; };
 		1613686D2D42B05C006290B8 /* MockCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613686C2D42B05C006290B8 /* MockCatRepository.swift */; };
 		1613686F2D42C09C006290B8 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613686E2D42C09C006290B8 /* MockNetworkService.swift */; };
+		161368732D43C2FB006290B8 /* FallbackCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368722D43C2FB006290B8 /* FallbackCatRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +56,13 @@
 		1613684B2D3FCC50006290B8 /* ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTests.swift; sourceTree = "<group>"; };
 		161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		161368542D401ACA006290B8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		1613685B2D41789B006290B8 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		1613685E2D4179D0006290B8 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 		161368612D427668006290B8 /* CatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCard.swift; sourceTree = "<group>"; };
 		161368632D427678006290B8 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
 		161368672D4279DB006290B8 /* CatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetails.swift; sourceTree = "<group>"; };
 		1613686C2D42B05C006290B8 /* MockCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatRepository.swift; sourceTree = "<group>"; };
 		1613686E2D42C09C006290B8 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		161368722D43C2FB006290B8 /* FallbackCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackCatRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,6 @@
 				1613683C2D3E81DF006290B8 /* Services */,
 				161368432D3FC856006290B8 /* Protocols */,
 				1613685D2D41797D006290B8 /* Resources */,
-				1613685A2D41787D006290B8 /* Mocks */,
 				161368262D3E758F006290B8 /* Assets.xcassets */,
 				161368282D3E758F006290B8 /* Preview Content */,
 			);
@@ -157,10 +156,9 @@
 		1613683C2D3E81DF006290B8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1613683D2D3E82F2006290B8 /* CatAPIRepository.swift */,
-				161368542D401ACA006290B8 /* NetworkService.swift */,
-				1613686C2D42B05C006290B8 /* MockCatRepository.swift */,
-				1613686E2D42C09C006290B8 /* MockNetworkService.swift */,
+				161368722D43C2FB006290B8 /* FallbackCatRepository.swift */,
+				161368742D43C71F006290B8 /* External API */,
+				161368752D43C73D006290B8 /* Local Mock */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,14 +186,6 @@
 				1613684B2D3FCC50006290B8 /* ChallengeTests.swift */,
 			);
 			path = ChallengeTests;
-			sourceTree = "<group>";
-		};
-		1613685A2D41787D006290B8 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				1613685B2D41789B006290B8 /* MockRequest.swift */,
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 		1613685D2D41797D006290B8 /* Resources */ = {
@@ -230,6 +220,24 @@
 				161368672D4279DB006290B8 /* CatDetails.swift */,
 			);
 			path = CatCardComponets;
+			sourceTree = "<group>";
+		};
+		161368742D43C71F006290B8 /* External API */ = {
+			isa = PBXGroup;
+			children = (
+				1613683D2D3E82F2006290B8 /* CatAPIRepository.swift */,
+				161368542D401ACA006290B8 /* NetworkService.swift */,
+			);
+			path = "External API";
+			sourceTree = "<group>";
+		};
+		161368752D43C73D006290B8 /* Local Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1613686C2D42B05C006290B8 /* MockCatRepository.swift */,
+				1613686E2D42C09C006290B8 /* MockNetworkService.swift */,
+			);
+			path = "Local Mock";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +347,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1613685C2D41789B006290B8 /* MockRequest.swift in Sources */,
 				161368552D401ACA006290B8 /* NetworkService.swift in Sources */,
 				161368332D3E76AF006290B8 /* Cat.swift in Sources */,
 				161368422D3FC653006290B8 /* CatListViewModel.swift in Sources */,
@@ -354,6 +361,7 @@
 				161368682D4279DB006290B8 /* CatDetails.swift in Sources */,
 				1613686D2D42B05C006290B8 /* MockCatRepository.swift in Sources */,
 				161368622D427668006290B8 /* CatCard.swift in Sources */,
+				161368732D43C2FB006290B8 /* FallbackCatRepository.swift in Sources */,
 				161368232D3E758E006290B8 /* ChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
