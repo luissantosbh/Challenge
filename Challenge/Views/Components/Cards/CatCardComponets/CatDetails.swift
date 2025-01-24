@@ -40,15 +40,25 @@ struct CatDetails: View {
     
     private func formatDate(_ dateString: String?) -> String? {
         guard let dateString = dateString else { return nil }
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEE MMM dd yyyy HH:mm:ss 'GMT'Z (zzzz)"
-        formatter.locale = Locale(identifier: "en_US")
-        
+        let formatter = DateFormatter.cachedFormatter
         if let date = formatter.date(from: dateString) {
-            let outputFormatter = DateFormatter()
-            outputFormatter.dateFormat = "MM/dd/yyyy"
-            return outputFormatter.string(from: date)
+            return DateFormatter.outputFormatter.string(from: date)
         }
         return nil
     }
+}
+
+extension DateFormatter {
+    static let cachedFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE MMM dd yyyy HH:mm:ss 'GMT'Z (zzzz)"
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter
+    }()
+    
+    static let outputFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter
+    }()
 }

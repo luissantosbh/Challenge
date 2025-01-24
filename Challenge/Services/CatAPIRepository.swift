@@ -11,6 +11,7 @@ class CatAPIRepository: CatRepository {
     private let networkService: NetworkServiceProtocol
     private let baseURL: String
     private let useMockOnError: Bool
+    private let timeoutInterval: TimeInterval = 10
     
     init(networkService: NetworkServiceProtocol, baseURL: String = "https://cataas.com/api/cats?limit=30", useMockOnError: Bool = true) {
         self.networkService = networkService
@@ -27,9 +28,11 @@ class CatAPIRepository: CatRepository {
         let dispatchGroup = DispatchGroup()
         var isAPICallCompleted = false
         
-        let timeoutWorkItem = DispatchWorkItem {
+        // MARK: - Timeout handler
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + timeoutInterval) {
             if !isAPICallCompleted {
-                print("Request timed out, switching to mock data.")
+                print("Request timed out. Switching to mock data.")
                 if self.useMockOnError {
                     MockRequest.fetchMockData(completion: completion)
                 } else {
@@ -38,14 +41,11 @@ class CatAPIRepository: CatRepository {
             }
         }
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 10, execute: timeoutWorkItem)
-        
         dispatchGroup.enter()
         networkService.request(url: url) { [weak self] (result: Result<[Cat], Error>) in
             guard let self = self else { return }
             
             isAPICallCompleted = true
-            timeoutWorkItem.cancel()
             dispatchGroup.leave()
             
             switch result {
@@ -53,7 +53,6 @@ class CatAPIRepository: CatRepository {
                 completion(.success(cats))
             case .failure(let error):
                 print("API request failed with error: \(error).")
-                
                 if self.useMockOnError {
                     print("Switching to mock data.")
                     MockRequest.fetchMockData(completion: completion)

@@ -1,200 +1,106 @@
 [
-   {
-      "_id":"rV1MVEh0Af2Bm4O0",
-      "tags":[
-         "kitten",
-         "several",
-         "gif"
-      ],
-      "owner":"Ana",
-      "createdAt":"Sun May 01 2022 20:57:11 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"ZHrXPVRJniYPR6pp",
-      "tags":[
-         "gif"
-      ],
-      "owner":"Lucas",
-      "createdAt":"Wed Jun 01 2022 22:29:22 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"2VgBUv9MaBwk5qnK",
-      "tags":[
-         "manspreading"
-      ],
-      "owner":"Roberto",
-      "createdAt":"Mon Oct 03 2022 07:59:01 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"2bPYDRuvU70sbgja",
-      "tags":[
-         "closed eyes",
-         "sleepy",
-         "bed"
-      ],
-      "owner":"Luís",
-      "createdAt":"Sun Sep 11 2022 00:27:05 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"AYJNTBAktmH3Q7ka",
-      "tags":[
-         "gif"
-      ],
-      "owner":"Mariana",
-      "createdAt":"Sun May 01 2022 20:54:14 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"LTxlBUdATocntNid",
-      "tags":[
-         
-      ],
-      "owner":"Fernanda",
-      "createdAt":"Thu Jun 30 2022 06:05:15 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"MBpd0f7cDU5EwhZ9",
-      "tags":[
-         "tuxedo",
-         "vending machine",
-         "stuck",
-         "glass",
-         "trapped"
-      ],
-      "owner":"Carlos",
-      "createdAt":"Sun Sep 11 2022 00:25:56 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"MkRxexGVMQzEoN73",
-      "tags":[
-         
-      ],
-      "owner":"Juliana",
-      "createdAt":"Wed May 18 2022 07:06:08 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"N6pTLrClzF83df8t",
-      "tags":[
-         "norwegian forest cat",
-         "daisy",
-         "gaming",
-         "pc"
-      ],
-      "owner":"Gabriel",
-      "createdAt":"Sun Sep 11 2022 00:30:31 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"Rn6xqsiHb9B7qgLw",
-      "tags":[
-         "small cat",
-         "brazilian",
-         "female",
-         "black & white"
-      ],
-      "owner":"Camila",
-      "createdAt":"Wed Sep 28 2022 02:36:22 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"X12PLRUVb3F8x0Jq",
-      "tags":[
-         "fluffy",
-         "tabby"
-      ],
-      "owner":"João",
-      "createdAt":"Tue Jan 17 2023 15:23:54 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Jan 24 2023 09:14:42 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"C3LqHJXz4B9vK5yN",
-      "tags":[
-         "orange",
-         "kitten"
-      ],
-      "owner":"Marcelo",
-      "createdAt":"Wed Mar 08 2023 14:09:38 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Thu Mar 16 2023 18:42:01 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"F2NRMU7Yd4P3cLqT",
-      "tags":[
-         "playful",
-         "kitten"
-      ],
-      "owner":"Beatriz",
-      "createdAt":"Mon Apr 03 2023 13:45:22 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Apr 11 2023 10:32:16 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"Q5TPXJ9Rb3C7v4LY",
-      "tags":[
-         "ginger",
-         "white",
-         "sleepy"
-      ],
-      "owner":"Sophia",
-      "createdAt":"Fri Feb 24 2023 12:22:39 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Sat Mar 04 2023 16:52:48 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"W9TP4LqBR7F3XC5N",
-      "tags":[
-         "black",
-         "sleek",
-         "alert"
-      ],
-      "owner":"Pedro",
-      "createdAt":"Thu Jan 19 2023 11:17:43 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Sun Jan 29 2023 15:42:52 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"T4BLXCR7P9NM3Fq2",
-      "tags":[
-         "persian",
-         "white",
-         "fluffy"
-      ],
-      "owner":"Isabela",
-      "createdAt":"Sat Mar 25 2023 09:32:14 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Wed Apr 05 2023 18:24:38 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"L8MCQ9TPBRX7NF23",
-      "tags":[
-         "tabby",
-         "friendly"
-      ],
-      "owner":"Henrique",
-      "createdAt":"Tue Feb 28 2023 10:12:58 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Fri Mar 10 2023 17:19:37 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"RQ9BLTPXF3NMC72L",
-      "tags":[
-         "cute",
-         "ginger"
-      ],
-      "owner":"Helena",
-      "createdAt":"Mon Apr 10 2023 13:45:22 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Tue Apr 18 2023 09:32:14 GMT+0000 (Coordinated Universal Time)"
-   },
-   {
-      "_id":"XZ7MC3NFP9BLRTQP",
-      "tags":[
-         "sleepy",
-         "tabby",
-         "purring"
-      ],
-      "owner":"Miguel",
-      "createdAt":"Fri Mar 31 2023 11:45:58 GMT+0000 (Coordinated Universal Time)",
-      "updatedAt":"Wed Apr 12 2023 18:12:22 GMT+0000 (Coordinated Universal Time)"
-   }
+    {
+        "_id":"rV1MVEh0Af2Bm4O0",
+        "tags":[
+            "kitten",
+            "several",
+            "gif"
+        ],
+        "owner":"Ana",
+        "createdAt":"Sun May 01 2022 20:57:11 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"ZHrXPVRJniYPR6pp",
+        "tags":[
+            "gif"
+        ],
+        "owner":"Lucas",
+        "createdAt":"Wed Jun 01 2022 22:29:22 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"2VgBUv9MaBwk5qnK",
+        "tags":[
+            "manspreading"
+        ],
+        "owner":"Roberto",
+        "createdAt":"Mon Oct 03 2022 07:59:01 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"2bPYDRuvU70sbgja",
+        "tags":[
+            "closed eyes",
+            "sleepy",
+            "bed"
+        ],
+        "owner":"Luís",
+        "createdAt":"Sun Sep 11 2022 00:27:05 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"AYJNTBAktmH3Q7ka",
+        "tags":[
+            "gif"
+        ],
+        "owner":"Mariana",
+        "createdAt":"Sun May 01 2022 20:54:14 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"LTxlBUdATocntNid",
+        "tags":[
+            
+        ],
+        "owner":"Fernanda",
+        "createdAt":"Thu Jun 30 2022 06:05:15 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"MBpd0f7cDU5EwhZ9",
+        "tags":[
+            "tuxedo",
+            "vending machine",
+            "stuck",
+            "glass",
+            "trapped"
+        ],
+        "owner":"Carlos",
+        "createdAt":"Sun Sep 11 2022 00:25:56 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"MkRxexGVMQzEoN73",
+        "tags":[
+            
+        ],
+        "owner":"Juliana",
+        "createdAt":"Wed May 18 2022 07:06:08 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"N6pTLrClzF83df8t",
+        "tags":[
+            "norwegian forest cat",
+            "daisy",
+            "gaming",
+            "pc"
+        ],
+        "owner":"Gabriel",
+        "createdAt":"Sun Sep 11 2022 00:30:31 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+        "_id":"Rn6xqsiHb9B7qgLw",
+        "tags":[
+            "small cat",
+            "brazilian",
+            "female",
+            "black & white"
+        ],
+        "owner":"Camila",
+        "createdAt":"Wed Sep 28 2022 02:36:22 GMT+0000 (Coordinated Universal Time)",
+        "updatedAt":"Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+    }
 ]

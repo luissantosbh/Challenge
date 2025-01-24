@@ -158,8 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				1613683D2D3E82F2006290B8 /* CatAPIRepository.swift */,
-				1613686C2D42B05C006290B8 /* MockCatRepository.swift */,
 				161368542D401ACA006290B8 /* NetworkService.swift */,
+				1613686C2D42B05C006290B8 /* MockCatRepository.swift */,
 				1613686E2D42C09C006290B8 /* MockNetworkService.swift */,
 			);
 			path = Services;
