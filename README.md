@@ -41,7 +41,8 @@ Code Structure
 * CatListView: Renders the list of cats fetched from the ViewModel.
 * CatDetailView: Displays detailed information about a selected cat.
 * CatListViewModel: The ViewModel responsible for fetching cat data and providing it to the View.
-* CatRepository & NetworkServiceProtocol: Abstract the data fetching logic, making it easy to swap between real API calls and mock data. 
+* CatRepository & NetworkServiceProtocol: Abstract the data fetching logic, making it easy to swap between real API calls and mock data.
+  
 Technologies Used
 * SwiftUI: For building declarative UI.
 * Kingfisher: For asynchronous image loading from URLs.
