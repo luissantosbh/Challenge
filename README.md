@@ -1,3 +1,6 @@
+
+![Project demonstration](screenCatApi.gif)
+
 Cat Adoption App
 
 Overview
@@ -6,8 +9,6 @@ Overview
 * In the event that the API is unavailable, a fallback mechanism is triggered to show mock data, ensuring uninterrupted functionality. 
 * The project follows the MVVM (Model-View-ViewModel) architecture, promoting separation of concerns, testability, and maintainability. 
 * Dependency Injection is also utilized to enhance flexibility and decouple the components.
-
-![Project demonstration](assets/GravacaodetelaCatApi.gif)
    
 Key Features
 * MVVM Architecture: The app follows the MVVM design pattern, with the View layer being responsible for UI rendering, the ViewModel for managing app logic, and the Model representing the data layer.
