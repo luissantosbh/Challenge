@@ -7,7 +7,8 @@ Overview
 * The project follows the MVVM (Model-View-ViewModel) architecture, promoting separation of concerns, testability, and maintainability. 
 * Dependency Injection is also utilized to enhance flexibility and decouple the components.
 
-
+![Project demonstration](assets/GravacaodetelaCatApi.gif)
+   
 Key Features
 * MVVM Architecture: The app follows the MVVM design pattern, with the View layer being responsible for UI rendering, the ViewModel for managing app logic, and the Model representing the data layer.
 * Fallback Mechanism: The app uses a fallback mechanism to show mock data when the API is unreachable, improving the user experience during service downtimes.
