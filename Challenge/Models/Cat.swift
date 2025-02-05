@@ -13,7 +13,7 @@ struct Cat: Identifiable, Codable {
     let updatedAt: String?
     
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
+        case id
         case tags
         case owner
         case createdAt

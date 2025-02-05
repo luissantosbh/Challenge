@@ -11,12 +11,13 @@ import SwiftUI
 struct CatApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(
-                repository: FallbackCatRepository(
-                    apiRepository: CatAPIRepository(networkService: NetworkService()),
-                    mockRepository: MockCatRepository()
-                )
+            let repository = FallbackCatRepository(
+                apiRepository: CatAPIRepository(networkService: NetworkService()),
+                mockRepository: MockCatRepository()
             )
+            let viewModel = CatListViewModel(repository: repository)
+            
+            ContentView(viewModel: viewModel)
         }
     }
 }

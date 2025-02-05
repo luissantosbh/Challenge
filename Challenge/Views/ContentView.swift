@@ -9,31 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    // MARK: - Properties
-    
-    @StateObject private var viewModel: CatListViewModel
-    
-    // MARK: - Initializer
-    
-    init(repository: CatRepository) {
-        _viewModel = StateObject(wrappedValue: CatListViewModel(repository: repository))
+    @ObservedObject private var viewModel: CatListViewModel
+
+    init(viewModel: CatListViewModel) {
+        self.viewModel = viewModel
     }
-    
-    // MARK: - View Body
-    
+
     var body: some View {
         NavigationView {
-            if viewModel.isLoading {
-                ProgressView("Loading...")
-            } else if let errorMessage = viewModel.errorMessage {
-                Text("Erro: \(errorMessage)")
-                    .foregroundColor(.red)
-            } else {
-                CatListView(cats: viewModel.cats, imageUrlProvider: viewModel.imageUrl(for:))
-            }
-        }
-        .onAppear {
-            viewModel.fetchCats()
+            CatListView(viewModel: viewModel)
         }
     }
 }
