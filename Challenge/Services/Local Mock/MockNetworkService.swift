@@ -16,20 +16,18 @@ class MockNetworkService: NetworkServiceProtocol {
     
     // MARK: - Internal Methods
     
-    func request<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>) -> Void) {
+    func request<T: Decodable>(url: URL) async throws -> T {
         if shouldReturnError {
-            let error = NSError(domain: "MockError", code: -1, userInfo: nil)
-            completion(.failure(error))
+            throw NSError(domain: "MockError", code: -1, userInfo: nil)
         } else if let data = mockData {
             do {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(decodedData))
+                return decodedData
             } catch {
-                completion(.failure(error))
+                throw error
             }
         } else {
-            let error = NSError(domain: "No Data", code: -1, userInfo: nil)
-            completion(.failure(error))
+            throw NSError(domain: "No Data", code: -1, userInfo: nil)
         }
     }
 }

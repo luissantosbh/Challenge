@@ -8,27 +8,10 @@
 import Foundation
 
 class NetworkService: NetworkServiceProtocol {
-    func request<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>) -> Void) {
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let decodedResponse = try decoder.decode(T.self, from: data)
-                completion(.success(decodedResponse))
-            } catch {
-                completion(.failure(error))
-            }
-        }
-        task.resume()
+    func request<T: Decodable>(url: URL) async throws -> T {
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try decoder.decode(T.self, from: data)
     }
 }

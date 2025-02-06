@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class CatListViewModel: ObservableObject {
     
@@ -26,21 +27,19 @@ class CatListViewModel: ObservableObject {
     
     // MARK: - Internal Methods
     
-    func fetchCats() {
+    @MainActor
+    func fetchCats() async {
         isLoading = true
         errorMessage = nil
         
-        repository.fetchCats { [weak self] result in
-            DispatchQueue.main.async {
-                self?.isLoading = false
-                switch result {
-                case .success(let fetchedCats):
-                    self?.cats = fetchedCats
-                case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
-                }
-            }
+        do {
+            let fetchedCats = try await repository.fetchCats()
+            self.cats = fetchedCats
+        } catch {
+            self.errorMessage = error.localizedDescription
         }
+        
+        isLoading = false
     }
     
     func imageUrl(for catId: String) -> URL? {

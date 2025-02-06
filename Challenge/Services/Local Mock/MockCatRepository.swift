@@ -37,13 +37,11 @@ class MockCatRepository: CatRepository {
     
     // MARK: - Internal Methods
     
-    func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
+    func fetchCats() async throws -> [Cat] {
         if shouldReturnError {
-            completion(.failure(NSError(domain: "MockError", code: -1, userInfo: nil)))
+            throw NSError(domain: "MockError", code: -1, userInfo: nil)
         } else {
-            completion(.success(mockData))
+            return mockData
         }
     }
 }
-
-

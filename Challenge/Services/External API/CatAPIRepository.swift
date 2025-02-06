@@ -12,7 +12,7 @@ class CatAPIRepository: CatRepository {
     // MARK: - Properties
     
     private let networkService: NetworkServiceProtocol
-    private let baseURL: String
+    var baseURL: String
     
     // MARK: - Initializer
     
@@ -23,19 +23,11 @@ class CatAPIRepository: CatRepository {
     
     // MARK: - Internal Methods
     
-    func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
+    func fetchCats() async throws -> [Cat] {
         guard let url = URL(string: baseURL) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
-            return
+            throw NSError(domain: "Invalid URL", code: -1, userInfo: nil)
         }
         
-        networkService.request(url: url) { (result: Result<[Cat], Error>) in
-            switch result {
-            case .success(let cats):
-                completion(.success(cats))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+        return try await networkService.request(url: url)
     }
 }

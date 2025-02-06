@@ -25,31 +25,25 @@ class FallbackCatRepository: CatRepository {
     
     // MARK: - Internal Methods
     
-    func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void) {
-        let dispatchGroup = DispatchGroup()
-        var isAPICallCompleted = false
-        
-        // MARK: - Fetch from external API
-        
-        dispatchGroup.enter()
-        apiRepository.fetchCats { result in
-            isAPICallCompleted = true
-            dispatchGroup.leave()
-            completion(result)
-        }
-        
-        // MARK: - Fallback to local mock data
-        
-        DispatchQueue.global().asyncAfter(deadline: .now() + timeoutInterval) {
-            if !isAPICallCompleted {
-                dispatchGroup.leave()
-                print("API request timed out. Falling back to mock data.")
-                self.mockRepository.fetchCats(completion: completion)
+    func fetchCats() async throws -> [Cat] {
+        return try await withThrowingTaskGroup(of: [Cat].self) { group in
+            group.addTask {
+                try await self.apiRepository.fetchCats()
             }
-        }
-        
-        dispatchGroup.notify(queue: .main) {
+            
+            group.addTask {
+                try await Task.sleep(nanoseconds: UInt64(self.timeoutInterval * 1_000_000_000))
+                throw NSError(domain: "Timeout", code: -1, userInfo: nil)
+            }
+            
+            do {
+                let cats = try await group.next()!
+                group.cancelAll()
+                return cats
+            } catch {
+                group.cancelAll()
+                return try await self.mockRepository.fetchCats()
+            }
         }
     }
 }
-

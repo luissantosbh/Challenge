@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CatRepository {
-    func fetchCats(completion: @escaping (Result<[Cat], Error>) -> Void)
+    func fetchCats() async throws -> [Cat]
 }

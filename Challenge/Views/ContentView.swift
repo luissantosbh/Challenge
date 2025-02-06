@@ -18,6 +18,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             CatListView(viewModel: viewModel)
+                .task {
+                    await viewModel.fetchCats()
+                }
         }
     }
 }

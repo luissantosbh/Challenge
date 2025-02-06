@@ -17,7 +17,7 @@
 		1613683E2D3E82F2006290B8 /* CatAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613683D2D3E82F2006290B8 /* CatAPIRepository.swift */; };
 		161368402D3FC5EC006290B8 /* CatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613683F2D3FC5EC006290B8 /* CatRepository.swift */; };
 		161368422D3FC653006290B8 /* CatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368412D3FC653006290B8 /* CatListViewModel.swift */; };
-		1613684C2D3FCC50006290B8 /* ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613684B2D3FCC50006290B8 /* ChallengeTests.swift */; };
+		1613684C2D3FCC50006290B8 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613684B2D3FCC50006290B8 /* MockNetworkService.swift */; };
 		161368532D401A9F006290B8 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */; };
 		161368552D401ACA006290B8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368542D401ACA006290B8 /* NetworkService.swift */; };
 		1613685F2D4179D0006290B8 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1613685E2D4179D0006290B8 /* MockData.json */; };
@@ -28,6 +28,11 @@
 		1613686D2D42B05C006290B8 /* MockCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613686C2D42B05C006290B8 /* MockCatRepository.swift */; };
 		1613686F2D42C09C006290B8 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613686E2D42C09C006290B8 /* MockNetworkService.swift */; };
 		161368732D43C2FB006290B8 /* FallbackCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161368722D43C2FB006290B8 /* FallbackCatRepository.swift */; };
+		164BE2EC2D5531A10055F60D /* CatListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BE2EB2D5531A10055F60D /* CatListViewModelTests.swift */; };
+		164BE2EE2D5531F30055F60D /* CatAPIRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BE2ED2D5531F30055F60D /* CatAPIRepositoryTests.swift */; };
+		164BE2F02D5536CE0055F60D /* FallbackCatRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BE2EF2D5536CE0055F60D /* FallbackCatRepositoryTests.swift */; };
+		164BE2F22D5537F90055F60D /* MockCatRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BE2F12D5537F90055F60D /* MockCatRepositoryTests.swift */; };
+		164BE2F42D55387A0055F60D /* MockCatAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BE2F32D55387A0055F60D /* MockCatAPIRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +58,7 @@
 		1613683F2D3FC5EC006290B8 /* CatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRepository.swift; sourceTree = "<group>"; };
 		161368412D3FC653006290B8 /* CatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewModel.swift; sourceTree = "<group>"; };
 		161368492D3FCC50006290B8 /* ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1613684B2D3FCC50006290B8 /* ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTests.swift; sourceTree = "<group>"; };
+		1613684B2D3FCC50006290B8 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		161368522D401A9F006290B8 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		161368542D401ACA006290B8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1613685E2D4179D0006290B8 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
@@ -63,6 +68,11 @@
 		1613686C2D42B05C006290B8 /* MockCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatRepository.swift; sourceTree = "<group>"; };
 		1613686E2D42C09C006290B8 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		161368722D43C2FB006290B8 /* FallbackCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackCatRepository.swift; sourceTree = "<group>"; };
+		164BE2EB2D5531A10055F60D /* CatListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewModelTests.swift; sourceTree = "<group>"; };
+		164BE2ED2D5531F30055F60D /* CatAPIRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIRepositoryTests.swift; sourceTree = "<group>"; };
+		164BE2EF2D5536CE0055F60D /* FallbackCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackCatRepositoryTests.swift; sourceTree = "<group>"; };
+		164BE2F12D5537F90055F60D /* MockCatRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatRepositoryTests.swift; sourceTree = "<group>"; };
+		164BE2F32D55387A0055F60D /* MockCatAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatAPIRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +193,11 @@
 		1613684A2D3FCC50006290B8 /* ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				1613684B2D3FCC50006290B8 /* ChallengeTests.swift */,
+				164BE2F52D553DCF0055F60D /* Mocks */,
+				164BE2EB2D5531A10055F60D /* CatListViewModelTests.swift */,
+				164BE2EF2D5536CE0055F60D /* FallbackCatRepositoryTests.swift */,
+				164BE2ED2D5531F30055F60D /* CatAPIRepositoryTests.swift */,
+				164BE2F12D5537F90055F60D /* MockCatRepositoryTests.swift */,
 			);
 			path = ChallengeTests;
 			sourceTree = "<group>";
@@ -238,6 +252,15 @@
 				1613686E2D42C09C006290B8 /* MockNetworkService.swift */,
 			);
 			path = "Local Mock";
+			sourceTree = "<group>";
+		};
+		164BE2F52D553DCF0055F60D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				164BE2F32D55387A0055F60D /* MockCatAPIRepository.swift */,
+				1613684B2D3FCC50006290B8 /* MockNetworkService.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,7 +393,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1613684C2D3FCC50006290B8 /* ChallengeTests.swift in Sources */,
+				164BE2F02D5536CE0055F60D /* FallbackCatRepositoryTests.swift in Sources */,
+				164BE2F22D5537F90055F60D /* MockCatRepositoryTests.swift in Sources */,
+				164BE2EE2D5531F30055F60D /* CatAPIRepositoryTests.swift in Sources */,
+				164BE2F42D55387A0055F60D /* MockCatAPIRepository.swift in Sources */,
+				1613684C2D3FCC50006290B8 /* MockNetworkService.swift in Sources */,
+				164BE2EC2D5531A10055F60D /* CatListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

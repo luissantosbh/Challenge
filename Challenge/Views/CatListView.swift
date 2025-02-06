@@ -50,7 +50,9 @@ struct CatListView: View {
             }
         }
         .onAppear {
-            viewModel.fetchCats()
+            Task {
+                await viewModel.fetchCats()
+            }
         }
     }
 }
