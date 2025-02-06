@@ -28,21 +28,17 @@ struct CatListView: View {
                 List(viewModel.cats) { cat in
                     NavigationLink(destination: CatDetailView(cat: cat, imageUrlProvider: viewModel.imageUrl(for:))) {
                         HStack {
-                            if let url = viewModel.imageUrl(for: cat.id) {
-                                KFImage(url)
-                                    .placeholder {
-                                        LoadingAnimation()
-                                            .padding()
-                                    }
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                            } else {
-                                LoadingAnimation()
-                                    .padding()
-                            }
+                            KFImage(viewModel.imageUrl(for: cat.id))
+                                .placeholder {
+                                    LoadingAnimation()
+                                        .padding()
+                                }
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                            
                             VStack(alignment: .leading) {
                                 Text(cat.id).font(.headline)
                                 Text(cat.tags.joined(separator: ", ")).font(.subheadline).foregroundColor(.gray)
